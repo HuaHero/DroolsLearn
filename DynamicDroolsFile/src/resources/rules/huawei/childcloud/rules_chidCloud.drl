@@ -1,9 +1,0 @@
-package rules.huawei.childcloud;
-dialect  "java"
-
-rule "rules_childCloud"
-    when
-        eval(true)
-    then
-        System.out.println("rules_childCloud");
-end
