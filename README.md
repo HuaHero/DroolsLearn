@@ -1,7 +1,8 @@
-# DroolsLearn
+
 Drools学习与使用
 
 
+# DroolsLearn工程：初步探索Drools的使用，记录发现的如下问题及其解决原因(可以看到，里面主要是利用kmodule.xml来记录相关规则库与对应规则文件)
 /**
 
 参照http://3ms.huawei.com/km/blogs/details/8127757 体验在IDEA中如何搭建起基于Drools的规则引擎体验
@@ -16,3 +17,5 @@ kmodule.xml文件和各规则文件，才发现，要求规则文件中的packag
 而且那个问题在7.23.0.Final已解决。这次通过明确怀疑kmodule.xml并试验才解决。
 （2） 本程序写了个无限循环，然后，在循环中提供重新初始化Drools引擎及Session的方式，然后在这个过程中更新了规则文件，发现不重启程序，新的规则
 并不会生效。
+
+# DynamicDroolsFile工程： 这是我自己参照对应Drools版本的kmodulemodel-example样例工程写的，主要是为了实现动态加载规则文件（为了将规则文件放在工程jar包外，通过修改规则文件配置，动态生效），可以看到，里面没有kmodule.xml文件了，而是通过代码及主要基于KieModuleModel和KieFileSystem来生成内存文件系统kmodule.xml和src/resources下的规则文件。
